@@ -1,0 +1,143 @@
+#navWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #ccc;
+    width: 100vw;
+}
+#leftNav, #rightNav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+}
+#leftNav {
+    justify-content: flex-start;
+}
+#rightNav {
+    justify-content: flex-end;
+}
+#homeIcon, #userIcon {
+    font-size: 5rem;
+    cursor: pointer;
+    margin: 0.5em;
+}
+#leftNav span, #rightNav span {
+    margin: 0.5em;
+    padding: 0.5em;
+    font-weight:lighter;
+    cursor: pointer;
+}
+#leftNav span:not(.pageSelected) {
+    font-size: 2rem;
+    color: #999;
+}
+#rightNav span {
+    font-size: 1.5rem;
+}
+.pageSelected {
+    font-size: 2.5rem;
+}
+#leftNav span:not(.pageSelected):hover {
+    color: #fff;
+}
+.pageSelected {
+    color: black;
+}
+#userDropdown {
+    position: absolute;
+    top: 12.5%;
+    right: 2%;
+    border: 2px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+#userLogoutIcon {
+    font-size: 3rem;
+    margin: 0.25em;
+}
+#userLogout {
+    font-size: 2rem;
+    margin: 0.25em;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+.visibleDropdown {
+    visibility: visible;
+    opacity: 1;
+}
+@media screen and (min-width: 481px) {
+    #navWrapperMobile {
+        display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    #navWrapper {
+        display: none;
+    }
+    #navWrapperMobile {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width: 100vw;
+        background-color: #999;
+    }
+    #homeIcon {
+        display: none;
+    }
+    #userIcon, #burgerIcon{
+        font-size: 5rem;
+        cursor: pointer;
+    }
+    #dropdownBurger {
+        position: absolute;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 150px;
+        border: 2px solid black;
+        margin: 1em;
+        top: 10%;
+        left: 5%;
+        background-color: white;
+        display: flex;
+        transition: all 300ms;
+    }
+    #navUser, #dropdownBurgerNav {
+        width: 50%;
+    }
+    #burgerIcon {
+        float: left;
+        margin: 0.5em;
+    }
+    #userIcon {
+        float: right;
+        margin: 0.5em;
+    }
+    #dropdownBurger span {
+        font-size: 2em;
+        margin: 0.5em;
+        padding: 0.5em;
+        width: 80%;
+        cursor: pointer;
+    }
+    #dropdownBurger span:not(.pageSelected):hover {
+        background-color: #eee;
+    }
+    .pageSelected {
+        background-color: #999;
+    }
+    #userDropdown {
+        top: 12.5%;
+        right: 5%;
+    }
+}
