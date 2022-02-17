@@ -14,13 +14,14 @@ export default class NavBar extends Component {
                 pageSelected,
                 onUserClick,
                 userMenuActive,
-                onPageClick    
+                onPageClick,
+                onHomeIconClick,
             } = this.props;
         return (
             <div>
                 <div id="navWrapper">
                     <div id="leftNav">
-                        <FontAwesomeIcon icon={faHome} id="homeIcon"/>
+                        <FontAwesomeIcon icon={faHome} id="homeIcon" onClick={onHomeIconClick}/>
                         <span id="homeNav" onClick={() => onPageClick(1)} className={pageSelected[0].className}>Home</span>
                         <span id="accountsNav" onClick={() => onPageClick(2)} className={pageSelected[1].className}>Accounts</span>
                         <span id="transactionsNav" onClick={() => onPageClick(3)} className={pageSelected[2].className}>Transactions</span>

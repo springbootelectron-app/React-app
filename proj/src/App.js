@@ -62,6 +62,12 @@ class App extends Component{
     this.setState(pageS)
 
   }
+  handleOnHomeIconClick = () =>{
+    const pageS = this.state.navbar.pageSelected.map(p=>{
+      p.id === 1 ? p.className = "pageSelected" : p.className = ""
+    })
+    this.setState(pageS)
+  }
 
   render() {
     return (
@@ -73,7 +79,8 @@ class App extends Component{
         pageSelected={this.state.navbar.pageSelected}
         onUserClick={this.handleUserClick}
         userMenuActive={this.state.navbar.userMenuActive}
-        onPageClick={this.handlePageClick}/>
+        onPageClick={this.handlePageClick}
+        onHomeIconClick={this.handleOnHomeIconClick}/>
       </React.Fragment>
     )
   }
